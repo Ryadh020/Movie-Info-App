@@ -2,14 +2,15 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /*outline: 1px red solid;*/
+    outline: 1px red solid;
 }
 body {
     background-color: black;
     font-family: 'Merriweather', serif;
 }
+
+/* title*/
 header {
-    width: 100vw;
     height: 60px;
     padding: 10px 25px;
     font-size: 1rem;
@@ -19,6 +20,8 @@ header {
     /*border-bottom: 1px white solid;*/
     box-shadow: 0px 0px 5px 1px white;
 }
+
+/* search bar*/
 main {
     display: flex;
     flex-direction: column;
@@ -32,7 +35,7 @@ main {
     border: white 1px solid;
 }
 form {
-    max-width: 700px;
+    width: 300px;
     height: 150px;
 
     display: flex;
@@ -44,7 +47,7 @@ label {
     color: white;
 }
 input {
-    max-width: 500px;
+    width: 250px;
     height: 45px;
     margin: 15px 0px;
     padding: 0px 5px;
@@ -56,4 +59,39 @@ input {
 }
 input::placeholder {
     text-align: center;
+}
+
+/* Movies list */
+.movies-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    margin: 0px 100px;
+    padding: 10px 10px;
+    border-radius: 15px;
+
+    
+    box-shadow: 0px 0px 5px 0px white;
+    border: white 1px solid;
+}
+.movie {
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 15px;
+    border-radius: 15px;
+
+    background-color: white;
+}
+img {
+    width: 150px;
+    height: 200;
+}
+p {
+    font-size: 1rem;
 }

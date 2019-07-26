@@ -16,9 +16,26 @@ $(document).ready(() => {
 function getMovie(searchText) {
     axios.get('http://www.omdbapi.com/?s='+ searchText + '&apikey=9e2b7edc')
          .then((response) => {
-             console.log(response);
+            let movies = response.data.Search;
+            let output ="";
+            
+            // output the informations of movie
+            $.each(movies, (index, movie) => {
+                output += `
+                    <div class="movie">
+                        <img src="${movie.Poster}" alt="">
+                        <p class="movie-title">${movie.Title}</p>
+                        <button class="movie-details"></button>
+                    </div>
+                `
+            });
+
+            // append it to the page :
+            $(".movies-list").html(output);
          })
          .catch((err) => {
              console.log(err);
          })                  
 }
+
+    
