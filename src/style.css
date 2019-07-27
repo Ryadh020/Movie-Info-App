@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    outline: 1px red solid;
+    /*outline: 1px red solid;*/
 }
 body {
     background-color: black;
@@ -63,13 +63,14 @@ input::placeholder {
 
 /* Movies list */
 .movies-list {
+    visibility: hidden;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 
     margin: 0px 100px;
-    padding: 10px 10px;
+    padding: 0px 10px;
     border-radius: 15px;
 
     
@@ -78,20 +79,52 @@ input::placeholder {
 }
 .movie {
     width: 250px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 15px;
+    height: 400px;
+    margin: 15px 15px;
     border-radius: 15px;
 
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+ 
+    color: white;
+    background-color: black;
+    border: 0.5px white solid;
 }
 img {
-    width: 150px;
-    height: 200;
+    width: 170px;
+    height: 190;
+    border-radius: 15px;
+
+    box-shadow: 0px 0px 5px 0px gray;
 }
 p {
-    font-size: 1rem;
+    padding: 2px 20px;
+
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Merriweather', serif;
+}
+.movie-details {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+
+    font-family: 'Merriweather', serif;
+    font-size: 0.7rem;
+
+    box-shadow: 0px 0px 5px 0px gray;
+    transition: 200ms all ease-in-out;
+}
+.movie-details:hover {
+    cursor: pointer;
+
+    color: white;
+    background-color: black;
+
+    box-shadow: none;
+    border: none;
 }

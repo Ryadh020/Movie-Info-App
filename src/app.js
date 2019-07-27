@@ -25,17 +25,16 @@ function getMovie(searchText) {
                     <div class="movie">
                         <img src="${movie.Poster}" alt="">
                         <p class="movie-title">${movie.Title}</p>
-                        <button class="movie-details"></button>
+                        <button class="movie-details">More detalis</button>
                     </div>
                 `
             });
 
             // append it to the page :
+            $(".movies-list").css("visibility", "visible");
             $(".movies-list").html(output);
          })
          .catch((err) => {
              console.log(err);
          })                  
 }
-
-    
