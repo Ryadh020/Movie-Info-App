@@ -5,7 +5,7 @@ $(document).ready(() => {
 
             // get the search text value :
         let searchText =$('#movieName').val();
-        getMovie(searchText);
+        getMovies(searchText);
 
             // delete search text :
         $('#movieName').val(" ");
@@ -13,9 +13,11 @@ $(document).ready(() => {
 });
 
 // get the movie informations from the api:
-function getMovie(searchText) {
+function getMovies(searchText) {
     axios.get('http://www.omdbapi.com/?s='+ searchText + '&apikey=9e2b7edc')
-         .then((response) => {
+        .then((response) => {
+            /*console.log(response);*/
+            
             let movies = response.data.Search;
             let output ="";
             
@@ -25,7 +27,7 @@ function getMovie(searchText) {
                     <div class="movie">
                         <img src="${movie.Poster}" alt="">
                         <p class="movie-title">${movie.Title}</p>
-                        <button class="movie-details">More detalis</button>
+                        <a class="movie-details" onclick="movieSelected('${movie.imdbID}')" href="details.html" >More detalis</a>
                     </div>
                 `
             });
@@ -33,8 +35,33 @@ function getMovie(searchText) {
             // append it to the page :
             $(".movies-list").css("visibility", "visible");
             $(".movies-list").html(output);
-         })
-         .catch((err) => {
-             console.log(err);
-         })                  
+        })
+        .catch((err) => {
+            console.log(err);
+    })                  
+}
+
+// send the movie id to the next page :
+function movieSelected(id) {
+    localStorage.setItem("movieID", id);
+    window.location = "detalis.html";
+     return false;    
+}
+
+
+// get the selected movie id :
+function getMovie() {
+    let movieID = sessionStorage.getItem("movieID");
+
+    axios.get('http://www.omdbapi.com/?i='+ movieID + '&apikey=9e2b7edc')
+    .then((response) => {
+        console.log(response);
+        
+
+
+
+    })
+    .catch((err) => {
+        console.log(err);
+}) 
 }
