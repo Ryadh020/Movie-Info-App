@@ -61,7 +61,7 @@ function getMovie() {
         <div class="info">
             <img src="${movie.Poster}" class="detail-poster"  alt="">
             <aside>
-                <h4 class="title">${movie.Title}</h4>
+                <h4 class="title">${movie.Title}:</h4>
                 <ul class="allInfos">
                     <li class="7">country :${movie.Country}</li>
                     <li class="7">Genre :${movie.Genre}</li>
@@ -76,7 +76,7 @@ function getMovie() {
             <h2 style="margin:0px 10px; font-family: 'Darker Grotesque', sans-serif;">Plot:</h2>
             <p class="theplot">${movie.Plot}</p>
             <div class="links">
-                <a class="imdb button" href="${movie.Website}">See Website</a>
+                <a class="imdb button" href="${movie.Website}" target="_blank">See Website</a>
                 <a class="go-back button" href="index.html">Go Back to Search</a>
             </div>
         </div>
