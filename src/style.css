@@ -57,6 +57,9 @@ input {
     font-family: 'Merriweather', serif;
     outline: none;
 }
+input:focus {
+    background-color: rgb(152, 182, 91);
+}
 input::placeholder {
     text-align: center;
 }
@@ -93,14 +96,14 @@ input::placeholder {
     background-color: black;
     border: 0.5px white solid;
 }
-img {
+.poster {
     width: 170px;
     height: 190;
     border-radius: 15px;
 
     box-shadow: 0px 0px 5px 0px gray;
 }
-p {
+.movie-title {
     padding: 2px 20px;
 
     text-align: center;
@@ -121,7 +124,7 @@ p {
     text-decoration: none;
 
     color: black;
-    background-color: white;
+    background-color: yellowgreen;
     box-shadow: 0px 0px 5px 0px gray;
     transition: 200ms all ease-in-out;
 }
@@ -132,5 +135,82 @@ p {
     background-color: black;
 
     box-shadow: none;
-    border: 0.5px gray solid;
+    border: 0.5px yellowgreen solid;
+}
+
+
+/* movie details page */
+.movies-detail {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 100px;
+    border-radius: 15px;
+
+    color: white;
+    box-shadow: 0 0 5px 0 gray;
+}
+.info {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    border-radius: 15px;
+
+    /*border-bottom: 1px gray solid;*/
+    box-shadow: 0 0 5px 0 gray;
+}
+.detail-poster {
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+
+}
+aside {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+    padding: 5px;
+
+    font-family: 'Darker Grotesque', sans-serif;
+}
+.allInfos {
+    list-style-type: none;
+}
+.plot {
+    margin: 15px;
+    padding: 5px;
+    border-radius: 10px;
+
+    box-shadow: 0 0 5px 0 gray;
+}
+.theplot {
+    margin: 5px;
+    font-family: 'Darker Grotesque', sans-serif;
+}
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+}
+.button {
+    width: 130px;
+    height: 30px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    outline: none;
+
+    font-family: 'Merriweather', serif;
+    font-size: 0.7rem;
+    text-decoration: none;
+
+    color: black;
+    background-color: yellowgreen;
+    /*box-shadow: 0px 0px 5px 0px gray;*/
+    transition: 200ms all ease-in-out;
+}
+.button:hover {
+    cursor: pointer;
 }

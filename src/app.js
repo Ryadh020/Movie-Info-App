@@ -8,7 +8,7 @@ $(document).ready(() => {
         getMovies(searchText);
 
             // delete search text :
-        $('#movieName').val(" ");
+        /*$('#movieName').val(" ");*/
     })
 });
 
@@ -25,7 +25,7 @@ function getMovies(searchText) {
             $.each(movies, (index, movie) => {
                 output += `
                     <div class="movie">
-                        <img src="${movie.Poster}" alt="">
+                        <img src="${movie.Poster}" class="poster" alt="">
                         <p class="movie-title">${movie.Title}</p>
                         <a class="movie-details" onclick="movieSelected('${movie.imdbID}')" href="details.html" >More detalis</a>
                     </div>
